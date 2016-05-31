@@ -1,6 +1,7 @@
 package helloworld.example.com.payback;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -32,7 +33,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddActivity extends Activity {
+public class AddActivity extends ListActivity {
 
     ListView lv;
     private Button back;
@@ -51,7 +52,6 @@ public class AddActivity extends Activity {
         current = getContactList();
         final ContactsAdapter adapter = new ContactsAdapter(AddActivity.this,
                 R.layout.item_contact, current);
-        lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
